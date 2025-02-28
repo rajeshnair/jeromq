@@ -1363,4 +1363,18 @@ public abstract class SocketBase extends Own implements IPollEvents, Pipe.IPipeE
             return address;
         }
     }
+
+    public float[] getBufferUsage()
+    {
+        float[] usage = new float[pipes.size()];
+        // TODO: Implement for other SocketTypes as well
+        if (options.type == ZMQ.ZMQ_PULL) {
+            int i = 0;
+            for (Pipe pipe : pipes) {
+                usage[i] = pipe.getBufferUsage();
+                i++;
+            }
+        }
+        return usage;
+    }
 }

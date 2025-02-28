@@ -592,4 +592,15 @@ public class Pipe extends ZObject
         return super.toString() + "(" + parent.getClass().getSimpleName() + "[" + parent.getTid() + "]->"
                 + peer.parent.getClass().getSimpleName() + "[" + peer.parent.getTid() + "])";
     }
+
+    public float getBufferUsage()
+    {
+        if (outpipe == null) {
+            return 0.0f;
+        }
+        if (outpipe.getUsage() == 0) {
+            return 0.0f;
+        }
+        return (float) outpipe.getUsage() / outpipe.getSize();
+    }
 }

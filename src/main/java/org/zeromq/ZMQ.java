@@ -1440,6 +1440,18 @@ public class ZMQ
         }
 
         /**
+         * Returns the usage of the internal buffer described by HWM and buffer size
+         * The return value is a float between 0.0 and 1.0 which represents the amount of
+         * buffer currently used. Multiplying that by 100 would give you the percentage usage
+         *
+         * @return value between 0.0 and 1.0 both inclusive
+         */
+        public float[] getBufferUsage()
+        {
+            return base.getBufferUsage();
+        }
+
+        /**
          * The 'ZMQ_HWM' option shall set the high water mark for the specified 'socket'. The high
          * water mark is a hard limit on the maximum number of outstanding messages 0MQ shall queue
          * in memory for any single peer that the specified 'socket' is communicating with.

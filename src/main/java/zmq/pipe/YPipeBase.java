@@ -28,4 +28,9 @@ public interface YPipeBase<T>
     //  and returns the value returned by the fn.
     //  The pipe mustn't be empty or the function crashes.
     T probe();
+
+    // Returns the count of unflushed items in the pipe.
+    int getUsage();
+
+    int getSize();
 }

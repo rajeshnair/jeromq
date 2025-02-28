@@ -76,4 +76,19 @@ public class YPipeConflate<T extends Msg> implements YPipeBase<T>
     {
         return dbuffer.probe();
     }
+
+    @Override
+    public int getUsage()
+    {
+        // TODO: Implement this
+        return 0;
+
+    }
+
+    @Override
+    public int getSize()
+    {
+        // TODO: Implement this
+        return 0;
+    }
 }

@@ -154,4 +154,22 @@ public class YPipe<T> implements YPipeBase<T>
 
         return queue.front();
     }
+
+    @Override
+    public int getUsage()
+    {
+        if (!checkRead()) {
+            return 0;
+        }
+        if (w >= r) {
+            return w - r;
+        }
+        return queue.getSize() - (r - w);
+    }
+
+    @Override
+    public int getSize()
+    {
+        return queue.getSize();
+    }
 }

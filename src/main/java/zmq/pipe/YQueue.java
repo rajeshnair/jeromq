@@ -149,4 +149,9 @@ class YQueue<T>
         }
         return val;
     }
+
+    public int getSize()
+    {
+        return this.size;
+    }
 }
